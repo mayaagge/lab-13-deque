@@ -32,8 +32,10 @@
       public E getLast(){ }
       
       // Return deque size
-      public int size(){ }
-      
+      public int size(){
+          return size;
+      }
+          
       // Getters
   
       // Return data
