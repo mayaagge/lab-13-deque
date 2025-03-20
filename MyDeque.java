@@ -1,4 +1,5 @@
-    public class MyDeque<E>{
+import java.util.NoSuchElementException;
+public class MyDeque<E>{
       // Instance variables
       private E[] data;
       private int size;
