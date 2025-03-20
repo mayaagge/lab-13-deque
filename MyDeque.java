@@ -26,10 +26,10 @@ public class MyDeque<E>{
           if (data.length == size){
               this.resize();
           }
-          else if (start == 0 && E[0] != null){
+          else if (start == 0 && data[0] != null){
               data[data.length-1] = element;
           }
-          else if (start == 0 && E[0] == null){
+          else if (start == 0 && data[0] == null){
               data[0] = element;
           }
           else{
@@ -41,7 +41,7 @@ public class MyDeque<E>{
          if (data.length == size){
               this.resize();
           }
-          else if (end == 0 && E[0] == null){
+          else if (end == 0 && data[0] == null){
               data[0] = element;
           }
           else{
