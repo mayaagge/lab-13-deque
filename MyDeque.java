@@ -15,7 +15,7 @@ public class MyDeque<E>{
       }
   
       public MyDeque(int initialCapacity){ 
-         data = (E[])new Object[intialCapacity];
+         data = (E[])new Object[initialCapacity];
          size = 0;
          start = 0;
          end = 0;
