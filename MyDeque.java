@@ -23,8 +23,14 @@ public class MyDeque<E>{
       
       // Add a new value on the indicated side
       public void addFirst(E element){
+          if (element == null){
+              throw new NullPointerException("Can't add null");
+          }
           if (data.length == size){
               this.resize();
+          }
+          if (size == 1){
+                end = start;
           }
           else if (start == 0 && data[0] != null){
               data[data.length-1] = element;
@@ -38,8 +44,14 @@ public class MyDeque<E>{
           size++;
       }
       public void addLast(E element){
+         if (element == null){
+              throw new NullPointerException("Can't add null");
+          }
          if (data.length == size){
               this.resize();
+          }
+          if (size == 1){
+              end = start;
           }
           else if (end == 0 && data[0] == null){
               data[0] = element;
@@ -51,12 +63,40 @@ public class MyDeque<E>{
       }
       
       // Remove and return the element
-      public E removeFirst(){ }
-      public E removeLast(){ }
+      public E removeFirst(){
+            if (size == 0){
+                  throw new NoSuchElementException("No element like that");
+            }
+            E temp = data[start];
+            data[start] = null;
+            start = (start + 1) % data.length;
+            size--;
+            return temp;
+      }
+      public E removeLast(){
+           if (size == 0){
+               throw new NoSuchElementException("No element like that");
+           }
+            E temp = data[end];
+            data[end] = null;
+            end = (end - 1) % data.length;
+            size--;
+            return temp;
+      }
       
       // Return the element. Do not delete elements.
-      public E getFirst(){ }
-      public E getLast(){ }
+      public E getFirst(){
+           if (size == 0){
+              throw new NoSuchElementException("No element like that");
+           }
+           return data[start];
+      }
+      public E getLast(){
+           if (size == 0){
+              throw new NoSuchElementException("No element like that");
+           }
+           return data[end];
+      }
       
       // Return deque size
       public int size(){
