@@ -1,4 +1,5 @@
 import java.util.NoSuchElementException;
+@SuppressWarnings("unchecked");
 public class MyDeque<E>{
       // Instance variables
       private E[] data;
