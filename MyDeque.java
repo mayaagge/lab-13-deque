@@ -80,7 +80,7 @@ public class MyDeque<E>{
       
       // Resize the array. Double its length (data.length * 2)
       private void resize() {
-          data = (E[])new Object(2*data.length); 
+          E[] newArr = (E[])new Object(2*data.length); 
       }
       
       // Return the deque as string in the correct order
