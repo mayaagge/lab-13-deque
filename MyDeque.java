@@ -45,7 +45,7 @@ public class MyDeque<E>{
               resize();
           }
           data[end] = element;
-          end = (end+1)%data.length;
+          end = (end+1+data.length)%data.length;
           size++;
           if (size == 1){
               end = start;
