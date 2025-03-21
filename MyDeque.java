@@ -27,9 +27,10 @@ public class MyDeque<E>{
               throw new NullPointerException("Can't add null");
           }
           if (data.length == size){
-              this.resize();
+              resize();
           }
-          data[(start-1+data.length)%data.length] = element;
+          start = (start-1+data.length)%data.length
+          data[start] = element;
           size++;
           if (size == 1){
                 end = start;
