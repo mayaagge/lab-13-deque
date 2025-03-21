@@ -29,7 +29,7 @@ public class MyDeque<E>{
           if (data.length == size){
               resize();
           }
-          start = (start-1+data.length)%data.length
+          start = (start-1+data.length)%data.length;
           data[start] = element;
           size++;
           if (size == 1){
