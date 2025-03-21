@@ -29,12 +29,12 @@ public class MyDeque<E>{
           if (data.length == size){
               resize();
           }
-          if (size == 1){
-              end = start;
-          }
           start = (start-1+data.length)%data.length;
           data[start] = element;
           size++;
+          if (size == 1){
+              end = start;
+          }
       }
       public void addLast(E element){
          if (element == null){
