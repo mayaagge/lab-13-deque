@@ -29,19 +29,12 @@ public class MyDeque<E>{
           if (data.length == size){
               this.resize();
           }
+          data[(start-1+data.length)%data.length] = element;
+          size++;
           if (size == 1){
                 end = start;
           }
-          else if (start == 0 && data[0] != null){
-              data[data.length-1] = element;
-          }
-          else if (start == 0 && data[0] == null){
-              data[0] = element;
-          }
-          else{
-              data[start-1] = element;
-          }
-          size++;
+          
       }
       public void addLast(E element){
          if (element == null){
@@ -50,16 +43,12 @@ public class MyDeque<E>{
          if (data.length == size){
               this.resize();
           }
+          data[end] = element;
+          end = (end+1)%data.length;
+          size++;
           if (size == 1){
               end = start;
           }
-          else if (end == 0 && data[0] == null){
-              data[0] = element;
-          }
-          else{
-              data[end+1] = element;
-          }
-          size++;
       }
       
       // Remove and return the element
