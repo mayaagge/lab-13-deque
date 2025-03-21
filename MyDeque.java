@@ -121,10 +121,29 @@ public class MyDeque<E>{
       // Resize the array. Double its length (data.length * 2)
       private void resize() {
           E[] newArr = (E[])new Object(2*data.length); 
+          for (int i = 0; i < size; i++){
+                newArr[i] = data[(start+i) % data.length];
+          }
+          data = newArr;
+          start = 0;
+          end = size;
       }
       
       // Return the deque as string in the correct order
       // Ex.:  "[hello, my, dear, friends!]" where hello is the value at start index
       // and friends! is the value at end index
-      public String toString(){ }
+      public String toString(){
+            if (size == 0){
+                  return "[]";
+            }
+            String result = "[";
+            for (int i = 0; i < size; i++){
+                  result += data[(start + i) % data.length];
+                  if (i < size-1){
+                        result += ", ";
+                  }
+            }
+            result += "]";
+            return result;
+      }
     }
