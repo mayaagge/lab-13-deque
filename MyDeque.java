@@ -29,13 +29,12 @@ public class MyDeque<E>{
           if (data.length == size){
               resize();
           }
+          if (size == 1){
+              end = start;
+          }
           start = (start-1+data.length)%data.length;
           data[start] = element;
           size++;
-          if (size == 1){
-                end = start;
-          }
-          
       }
       public void addLast(E element){
          if (element == null){
@@ -44,13 +43,29 @@ public class MyDeque<E>{
          if (data.length == size){
               resize();
           }
+          if (size == 1){
+              end = start;
+          }
+          else if (end == 0 && data[0] == null){
+              data[0] = element;
+          }
+          else{
+              data[end+1] = element;
+          }
+          size++;
+      }
+      /*
+         if (data.length == size){
+              resize();
+          }
           data[end] = element;
-          end = (end+1+data.length)%data.length;
+          end = (end+1)%data.length;
           size++;
           if (size == 1){
               end = start;
           }
       }
+*/
       
       // Remove and return the element
       public E removeFirst(){
