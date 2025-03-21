@@ -120,7 +120,7 @@ public class MyDeque<E>{
       
       // Resize the array. Double its length (data.length * 2)
       private void resize() {
-          E[] newArr = (E[])new Object(2*data.length); 
+          E[] newArr = (E[])new Object[2*data.length]; 
           for (int i = 0; i < size; i++){
                 newArr[i] = data[(start+i) % data.length];
           }
