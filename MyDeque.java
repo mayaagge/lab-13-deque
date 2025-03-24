@@ -130,7 +130,7 @@ public class MyDeque<E>{
             for (int i = 0; i < size; i++){
                   result += data[(start + i) % data.length];
                   if (i < size-1){
-                        )result += ", ";
+                      result += ", ";
                   }
             }
             result += "]";
