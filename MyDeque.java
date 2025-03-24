@@ -24,7 +24,7 @@ public class MyDeque<E>{
       // Add a new value on the indicated side
       public void addFirst(E element){
           if (element == null){
-              throw new NullPointerException("Can't add null");
+            throw new NullPointerException("Can't add null");
           }
           if (data.length == size){
               resize();
@@ -38,7 +38,7 @@ public class MyDeque<E>{
       }
       public void addLast(E element){
          if (element == null){
-              throw new NullPointerException("Can't add null");
+            throw new NullPointerException("Can't add null");
          }
          if (data.length == size){
               resize();
@@ -55,7 +55,7 @@ public class MyDeque<E>{
       // Remove and return the element
       public E removeFirst(){
             if (size == 0){
-                  throw new NoSuchElementException("No element like that");
+              throw new NoSuchElementException("No element like that");
             }
             E temp = data[start];
             data[start] = null;
@@ -65,7 +65,7 @@ public class MyDeque<E>{
       }
       public E removeLast(){
            if (size == 0){
-               throw new NoSuchElementException("No element like that");
+              throw new NoSuchElementException("No element like that");
            }
             E temp = data[end];
             data[end] = null;
@@ -130,7 +130,7 @@ public class MyDeque<E>{
             for (int i = 0; i < size; i++){
                   result += data[(start + i) % data.length];
                   if (i < size-1){
-                        result += ", ";
+                        )result += ", ";
                   }
             }
             result += "]";
