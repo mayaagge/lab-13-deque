@@ -22,7 +22,7 @@ public class MyDeque<E>{
       }
       
       // Add a new value on the indicated side
-      public void addFirst(E element) throws Exception{
+      public void addFirst(E element){
           if (element == null){
               throw new NullPointerException("Can't add null");
           }
@@ -36,7 +36,7 @@ public class MyDeque<E>{
               end = start;
           }
       }
-      public void addLast(E element) throws Exception{
+      public void addLast(E element){
          if (element == null){
               throw new NullPointerException("Can't add null");
          }
@@ -53,7 +53,7 @@ public class MyDeque<E>{
 
       
       // Remove and return the element
-      public E removeFirst() throws Exception{
+      public E removeFirst(){
             if (size == 0){
                   throw new NoSuchElementException("No element like that");
             }
@@ -63,7 +63,7 @@ public class MyDeque<E>{
             size--;
             return temp;
       }
-      public E removeLast() throws Exception{
+      public E removeLast(){
            if (size == 0){
                throw new NoSuchElementException("No element like that");
            }
@@ -75,13 +75,13 @@ public class MyDeque<E>{
       }
       
       // Return the element. Do not delete elements.
-      public E getFirst() throws Exception{
+      public E getFirst(){
            if (size == 0){
               throw new NoSuchElementException("No element like that");
            }
            return data[start];
       }
-      public E getLast() throws Exception{
+      public E getLast(){
            if (size == 0){
               throw new NoSuchElementException("No element like that");
            }
