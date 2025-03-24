@@ -57,9 +57,11 @@ public class Driver{
     } catch (Exception e) {
        System.out.println("addLast exception: " + e);
     }
+    System.out.println("Size of different deque: " + deque1.size());
     deque1.addFirst("go");
     deque1.addLast("away");
     deque1.addFirst("Size changer");
     System.out.println("Check resize after adding 2 elements to deque with capacity 2: " + deque1.toString());
+    System.out.println("Size of deque now: " + deque1.size());
   }
 }
