@@ -60,7 +60,7 @@ public class Driver{
     System.out.println("Size of different deque and integers: " + deque1.size());
     deque1.addFirst(1);
     deque1.addLast(2);
-    deque1.addFirst("Size changer");
+    deque1.addFirst(3);
     System.out.println("Check resize after adding 2 elements to deque with capacity 2: " + deque1.toString());
     System.out.println("Size of deque now: " + deque1.size());
   }
