@@ -1,7 +1,7 @@
 public class Driver{
   public static void main(String[] args){
     MyDeque<String> deque = new MyDeque<>();
-    MyDeque<String> deque1 = new MyDeque<>(2);
+    MyDeque<Integer> deque1 = new MyDeque<>(2);
     System.out.println("Initial deque: " + deque.toString());
     System.out.println("Size: " + deque.size());
     deque.addFirst("there");
@@ -57,9 +57,9 @@ public class Driver{
     } catch (Exception e) {
        System.out.println("addLast exception: " + e);
     }
-    System.out.println("Size of different deque: " + deque1.size());
-    deque1.addFirst("go");
-    deque1.addLast("away");
+    System.out.println("Size of different deque and integers: " + deque1.size());
+    deque1.addFirst(1);
+    deque1.addLast(2);
     deque1.addFirst("Size changer");
     System.out.println("Check resize after adding 2 elements to deque with capacity 2: " + deque1.toString());
     System.out.println("Size of deque now: " + deque1.size());
